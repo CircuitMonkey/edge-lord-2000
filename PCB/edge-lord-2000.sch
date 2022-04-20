@@ -3953,6 +3953,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="94.996" y="134.112" size="1.27" layer="97">GPIO #15</text>
 <text x="45.466" y="105.918" size="1.27" layer="97" align="bottom-right">GPIO #22</text>
 <text x="45.466" y="108.458" size="1.27" layer="97" align="bottom-right">GPIO #21</text>
+<text x="27.94" y="123.952" size="1.27" layer="97" align="top-left">Ground EN
+to turn off.</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
@@ -3965,8 +3967,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <attribute name="DOCUMENT_NUMBER" x="160.02" y="6.096" size="3.81" layer="94" ratio="15"/>
 </instance>
 <instance part="HUZZAH" gate="G$1" x="68.58" y="109.22" smashed="yes"/>
-<instance part="SUPPLY1" gate="GND" x="25.4" y="127" smashed="yes">
-<attribute name="VALUE" x="26.924" y="125.349" size="0.6096" layer="96" font="vector" align="center"/>
+<instance part="SUPPLY1" gate="GND" x="25.4" y="121.92" smashed="yes">
+<attribute name="VALUE" x="26.924" y="120.269" size="0.6096" layer="96" font="vector" align="center"/>
 </instance>
 <instance part="SUPPLY2" gate="GND" x="68.58" y="91.44" smashed="yes">
 <attribute name="VALUE" x="68.58" y="88.773" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4246,22 +4248,18 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <busses>
 </busses>
 <nets>
-<net name="N$1" class="0">
+<net name="EN" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="EN"/>
 <wire x1="55.88" y1="124.46" x2="20.32" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="PWR" gate="G$1" pin="2"/>
+<label x="23.876" y="124.714" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="SUPPLY1" gate="GND" pin="GND"/>
-<wire x1="20.32" y1="127" x2="25.4" y2="127" width="0.1524" layer="91"/>
-<pinref part="PWR" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -4375,6 +4373,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <segment>
 <pinref part="C13" gate="G$1" pin="2"/>
 <pinref part="SUPPLY35" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="PWR" gate="G$1" pin="3"/>
+<pinref part="SUPPLY1" gate="GND" pin="GND"/>
+<wire x1="20.32" y1="121.92" x2="25.4" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+4.1V" class="0">

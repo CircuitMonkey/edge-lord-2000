@@ -185,7 +185,7 @@
 <layer number="255" name="Accent" color="7" fill="1" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYmRlZGJl" projecturn="a.cGVyc29uYWw6dWUyYmRlZGJlIzIwMTcwMzI1Njg5MjEzMDY" f3durn="urn:adsk.wipprod:dm.lineage:VkQONFKbSQmlTrznlbgTTQ" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="58f3acec-7e41-46b0-b4b5-7cada9a63452" lastsyncedrevisionid="58f3acec-7e41-46b0-b4b5-7cada9a63452" lastboardhashguid="8f786de1-8546-1301-88f5-f3cb95fc9794" lastpushedtime="2021-12-28T23:39:31Z" linktopcb3d="true"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYmRlZGJl" projecturn="a.cGVyc29uYWw6dWUyYmRlZGJlIzIwMTgwNTA0MTMwNTkwMzU2" f3durn="urn:adsk.wipprod:dm.lineage:Owe0uUw4Qyar69ouMgCf0w" pcbguid="51dd95b6-2379-4a06-a81f-2d97e1af3568" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="f083e808-b7ae-4063-8117-84aeecfaca73" lastsyncedrevisionid="f083e808-b7ae-4063-8117-84aeecfaca73" lastboardhashguid="edf6f39f-40e3-2f56-e119-07d7723e7346" lastpushedtime="2022-04-19T22:39:49Z" linktopcb3d="true"/>
 <plain>
 <wire x1="4" y1="0" x2="48" y2="0" width="0" layer="20"/>
 <wire x1="48" y1="0" x2="52" y2="4" width="0" layer="20"/>
@@ -1186,7 +1186,7 @@ Please make sure your boards conform to these design rules.
 </element>
 </elements>
 <signals>
-<signal name="N$1">
+<signal name="EN">
 <contactref element="HUZZAH" pad="EN"/>
 <contactref element="PWR" pad="2"/>
 <wire x1="19.15" y1="73.84" x2="19.15" y2="72.45" width="0.1524" layer="1"/>
@@ -1242,7 +1242,6 @@ Please make sure your boards conform to these design rules.
 <contactref element="RGB2" pad="2"/>
 <contactref element="RGB3" pad="2"/>
 <contactref element="R7" pad="1"/>
-<contactref element="PWR" pad="1"/>
 <contactref element="C12" pad="2"/>
 <contactref element="C13" pad="2"/>
 <via x="21.1" y="61.4" extent="1-16" drill="0.35"/>
@@ -1325,6 +1324,7 @@ Please make sure your boards conform to these design rules.
 <via x="20" y="17.1" extent="1-16" drill="0.35"/>
 <via x="25.9" y="20.3" extent="1-16" drill="0.35"/>
 <via x="34.6" y="20" extent="1-16" drill="0.35"/>
+<contactref element="PWR" pad="3"/>
 </signal>
 <signal name="+4.1V">
 <contactref element="HUZZAH" pad="BAT"/>
