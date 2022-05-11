@@ -3939,17 +3939,25 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="94.996" y="136.652" size="1.27" layer="97">GPIO #4</text>
 <text x="93.726" y="123.698" size="1.27" layer="97">GPIO #26</text>
 <text x="93.726" y="126.238" size="1.27" layer="97">GPIO #25</text>
-<text x="55.88" y="185.42" size="5.08" layer="97">TODO:
--nothing for now</text>
+<text x="7.62" y="53.34" size="2.54" layer="97">TODO:
+- change button pins to use input only pins.
+-change MOT3 MOT4 to use non-SCK/MO pins.
+- MOTORS connector channel order should
+  be reversed, should go left to right.</text>
 <text x="94.996" y="134.112" size="1.27" layer="97">GPIO #15</text>
 <text x="45.466" y="105.918" size="1.27" layer="97" align="bottom-right">GPIO #22</text>
 <text x="45.466" y="108.458" size="1.27" layer="97" align="bottom-right">GPIO #21</text>
 <text x="27.94" y="123.952" size="1.27" layer="97" align="top-left">Ground EN
 to turn off.</text>
+<text x="5.08" y="17.78" size="2.54" layer="97">Bodge Notes:
+ - MOT2 and  MOT3 don't work as they were routed
+    onto INPUT only pins.  Cut traces and moved to
+    SCK(5) and MO (18) pins.  But SCK has signal on it during programming. Causing motor to run.
+ - Rev.B Move buttons to input only pins and use output pins (non-SCK) for motors.</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
-<attribute name="DOCUMENT_NUMBER" x="0" y="0" size="1.27" layer="96"/>
+<attribute name="DOCUMENT_NUMBER" x="10.16" y="5.08" size="1.27" layer="96" display="off"/>
 </instance>
 <instance part="FRAME1" gate="G$2" x="147.32" y="0" smashed="yes">
 <attribute name="LAST_DATE_TIME" x="160.02" y="1.27" size="2.54" layer="94" font="vector"/>
