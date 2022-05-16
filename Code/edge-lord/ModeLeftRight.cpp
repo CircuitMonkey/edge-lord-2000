@@ -1,14 +1,13 @@
 #include "Arduino.h"  
 #include "ModeLeftRight.h"
 
-ModeLeftRight::ModeLeftRight(Adafruit_SSD1327& _display) : display(_display) {
-    display = _display;
+ModeLeftRight::ModeLeftRight(Adafruit_SSD1327& _display) : Mode( _display ) {
+    //display = _display;
     uint8_t H = 100;
-    uint8_t W = 127/4;
-    slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  3);  // Upper
-    slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  7);  // Lower
-    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  0,15,  4);  // Speed
-    slider[3]  = new OledSlider(display, "HRD", W*3,127-H, W,H,  0, 7,  0);  // Soft to Hard
+    uint8_t W = 127/N_SLIDERS;
+    slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  4);  // Upper
+    slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  4);  // Lower
+    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  1,12,  4);  // Speed
 
     calcAnim();
 }
@@ -18,10 +17,10 @@ void ModeLeftRight::draw() {
   display.setCursor( 36, 8 );
   display.setTextSize(1);
   display.setTextColor(SSD1327_WHITE);
-  display.println( "Left-Right Mode" );
+  display.println( "Left-Right" );
   if ( showing < 1 ) return;
   
-  for(int i=0; i<4; i++) {
+  for(int i=0; i<N_SLIDERS; i++) {
     if ( i == currentSlider ) {
       slider[i]->select(1);
     } else {
@@ -38,12 +37,12 @@ int8_t ModeLeftRight::buttonState(uint8_t _s) {
   if ( showing < 1 ) return -1;
   if ( (_s&0x01) == 0 ) {
     slider[currentSlider]->change(1);
-    calcAnim();  
+    //calcAnim();  
     return 0;
   }
   if ( (_s&(1<<1)) == 0 ) { // Down
     slider[currentSlider]->change(-1);
-    calcAnim();
+    //calcAnim();
     return 0;
   }
   if ( (_s&(1<<2)) == 0 ) {  // Left
@@ -61,18 +60,26 @@ int8_t ModeLeftRight::buttonState(uint8_t _s) {
     showing = 0;
     return -1;  // Cause main  menu to display.
   }
+  if ( (_s&(1<<5)) == 0 ) {  // Stop/pause
+    stopped = !stopped;  // toggle stop state
+    //Serial.println( "Left-Right STOP button pressed" );
+    return 0;
+  }
 
   return 0;  
 }
 
 uint8_t ModeLeftRight::getMotorVal(uint8_t _n ) {
-  //return animTable[animStep][_n/2];  // two upper - two lower  up-down
-  return animTable[animStep][_n%2];  // two upper - two lower left-right?
+  if ( stopped ) return 0;
+  //int ix = _n%2;
+  //(animStep+ix*(MODE_LEFT_RIGHT_ANIM_STEPS/2))%MODE_LEFT_RIGHT_ANIM_STEPS;
+  
+  return animTable[animStep][_n%2] * slider[_n/2]->getVal() / 16;  // two upper - two lower left-right?
 }
 
-void ModeLeftRight::setShowing(uint8_t _show) {
-  showing = _show;
-}
+//void ModeLeftRight::setShowing(uint8_t _show) {
+//  showing = _show;
+//}
 
 // Recompute animation table
 void ModeLeftRight::calcAnim() {
@@ -87,25 +94,40 @@ void ModeLeftRight::calcAnim() {
   // Wave table
   for ( int i=0; i< MODE_LEFT_RIGHT_ANIM_STEPS; i++ ) {
     int ix1 = (i+MODE_LEFT_RIGHT_ANIM_STEPS*1/2)%MODE_LEFT_RIGHT_ANIM_STEPS;
+    //int ix2 = (i+MODE_LEFT_RIGHT_ANIM_STEPS*2/4)%MODE_LEFT_RIGHT_ANIM_STEPS;
+    //int ix3 = (i+MODE_LEFT_RIGHT_ANIM_STEPS*3/4)%MODE_LEFT_RIGHT_ANIM_STEPS;
     
-    animTable[i][0] = (-cos( 2*PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS) )+1) * slider[0]->getVal()/2;
-    animTable[ix1][1] = (-cos( 2*PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS) )+1) * slider[1]->getVal()/2;
+    float cs = sin( 2* PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS/2));
+    if ( cs < 0 ) cs = 0; // clamp negative
+    
+    animTable[i][0] = cs * 15; // * slider[0]->getVal()/2;
+    //animTable[i][0] = (-cos( 2*PI * ((float)i/MODE_CYCLE_ANIM_STEPS*2))+1) * 8; // * slider[0]->getVal()/2;
+    //animTable[i][0] = (-cos( 2*PI * ((float)i/MODE_CYCLE_ANIM_STEPS /* *2 */) )+1) * slider[0]->getVal()/2;
+    animTable[ix1][1] = animTable[i][0];
+    //animTable[ix2][3] = animTable[i][0]; // Swapped 2&3 so cycle is like clock cycle (TL -> TR -> BR -> BL )
+    //animTable[ix3][2] = animTable[i][0];    
   }
+//  // Wave table
+//  for ( int i=0; i< MODE_LEFT_RIGHT_ANIM_STEPS; i++ ) {
+//    int ix1 = (i+MODE_LEFT_RIGHT_ANIM_STEPS/2)%MODE_LEFT_RIGHT_ANIM_STEPS;
+//    
+//    animTable[i][0] = (-sin( PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS) )+1)/2; // * slider[0]->getVal()/2;
+//    animTabel[ix1][1] = animTable[i][0];
+//    //animTable[i][0] = (-cos( 2*PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS) )+1) * slider[0]->getVal()/2;
+//    //animTable[ix1][1] = (cos( 2*PI * ((float)i/MODE_LEFT_RIGHT_ANIM_STEPS) )+1) * slider[1]->getVal()/2;
+//  }
   for ( int i=0; i< MODE_LEFT_RIGHT_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
+    Serial.print( 0 ); Serial.print( ":");
     Serial.print( animTable[i][0]); Serial.print( "  ");
-  }
-  Serial.println();
-  for ( int i=0; i< MODE_LEFT_RIGHT_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
+    Serial.print( 1 ); Serial.print( ":");
     Serial.print( animTable[i][1]); Serial.print( "  ");
+    Serial.println();
   }
-  Serial.println();
   
 }
 
-void ModeLeftRight::bumpAnimStep() {
-  animStep++;
+void ModeLeftRight::tick() {
+  animStep += (int)(1.5 * slider[2]->getVal());
   if ( animStep >= MODE_LEFT_RIGHT_ANIM_STEPS ) {
     resetAnim();
   }

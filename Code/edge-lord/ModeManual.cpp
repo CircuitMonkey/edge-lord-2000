@@ -1,13 +1,14 @@
 #include "Arduino.h"  
 #include "ModeManual.h"
 
-ModeManual::ModeManual(Adafruit_SSD1327& _display) : display(_display) {
-    display = _display;
+ModeManual::ModeManual(Adafruit_SSD1327& _display) : Mode( _display ) {
+//    display = _display;
     uint8_t H = 100;
-    slider[0]  = new OledSlider(display, "1",  0,127-H,  32,H,  0,15, 0);
-    slider[1]  = new OledSlider(display, "2", 32,127-H,  32,H,  0,15, 3);
-    slider[2]  = new OledSlider(display, "3", 64,127-H,  32,H,  0,15, 7);
-    slider[3]  = new OledSlider(display, "4", 96,127-H,  32,H,  0,15,15);    
+    uint8_t W = 127/N_SLIDERS;
+    slider[0]  = new OledSlider(display, "1",  W*0,127-H,  W,H,  0,15, 0);
+    slider[1]  = new OledSlider(display, "2",  W*1,127-H,  W,H,  0,15, 0);
+    slider[2]  = new OledSlider(display, "3",  W*2,127-H,  W,H,  0,15, 0);
+    slider[3]  = new OledSlider(display, "4",  W*3,127-H,  W,H,  0,15, 0);    
 }
 
 void ModeManual::draw() {
@@ -15,10 +16,10 @@ void ModeManual::draw() {
   display.setCursor( 36, 8 );
   display.setTextSize(1);
   display.setTextColor(SSD1327_WHITE);
-  display.println( "Manual Mode" );
+  display.println( "Manual" );
   if ( showing < 1 ) return;
   
-  for(int i=0; i<4; i++) {
+  for(int i=0; i<N_SLIDERS; i++) {
     if ( i == currentSlider ) {
       slider[i]->select(1);
     } else {
@@ -62,15 +63,18 @@ int8_t ModeManual::buttonState(uint8_t _s) {
   
 }
 
-uint8_t ModeManual::getSliderVal(uint8_t _n ) {
+uint8_t ModeManual::getMotorVal(uint8_t _n ) {
+  if ( stopped ) return 0;
   return slider[_n]->getVal();
 }
+
+void ModeManual::tick() {}
 
 //uint8_t ModeManual::isShowing() {
 //  if (showing > 0) return 1;
 //  return 0;
 //}
 
-void ModeManual::setShowing(uint8_t _show) {
-  showing = _show;
-}
+//void ModeManual::setShowing(uint8_t _show) {
+//  showing = _show;
+//}

@@ -1,15 +1,15 @@
 #include "Arduino.h"  
 #include "ModeCycle.h"
 
-ModeCycle::ModeCycle(Adafruit_SSD1327& _display) : display(_display) {
-    display = _display;
+//#define N_SLIDERS 4
+
+ModeCycle::ModeCycle(Adafruit_SSD1327& _display) : Mode( _display ) {
     uint8_t H = 100;
-    uint8_t W = 127/5;
-    slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  3);  // Upper
-    slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  7);  // Lower
-    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  0,15,  4);  // Speed
+    uint8_t W = 127/N_SLIDERS;
+    slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  2);  // Upper
+    slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  2);  // Lower
+    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2, 16,  1);  // Speed
     slider[3]  = new OledSlider(display, "DIR", W*3,127-H, W,H,  0, 1,  0);  // DIR   
-    slider[4]  = new OledSlider(display, "HRD", W*4,127-H, W,H,  0, 7,  0);  // Soft to Hard
 
     calcAnim();
 }
@@ -19,10 +19,10 @@ void ModeCycle::draw() {
   display.setCursor( 36, 8 );
   display.setTextSize(1);
   display.setTextColor(SSD1327_WHITE);
-  display.println( "Cycle Mode" );
+  display.println( "Cycle" );
   if ( showing < 1 ) return;
   
-  for(int i=0; i<5; i++) {
+  for(int i=0; i<N_SLIDERS; i++) {
     if ( i == currentSlider ) {
       slider[i]->select(1);
     } else {
@@ -39,12 +39,12 @@ int8_t ModeCycle::buttonState(uint8_t _s) {
   if ( showing < 1 ) return -1;
   if ( (_s&0x01) == 0 ) {
     slider[currentSlider]->change(1);
-    calcAnim();  
+    //calcAnim();  
     return 0;
   }
   if ( (_s&(1<<1)) == 0 ) { // Down
     slider[currentSlider]->change(-1);
-    calcAnim();
+    //calcAnim();
     return 0;
   }
   if ( (_s&(1<<2)) == 0 ) {  // Left
@@ -62,23 +62,26 @@ int8_t ModeCycle::buttonState(uint8_t _s) {
     showing = 0;
     return -1;  // Cause main  menu to display.
   }
+  if ( (_s&(1<<5)) == 0 ) {  // Stop/pause
+    stopped = !stopped;  // toggle stop state
+    //Serial.println( "Cycle STOP button pressed" );
+    return 0;
+  }
 
   return 0;  
 }
 
 uint8_t ModeCycle::getMotorVal(uint8_t _n ) {
-  return animTable[animStep][_n];
-}
-
-void ModeCycle::setShowing(uint8_t _show) {
-  showing = _show;
+  if ( stopped ) return 0;
+  int index = animStep;
+  if (  slider[3]->getVal() > 0 ) {
+    index = MODE_CYCLE_ANIM_STEPS - animStep - 1;
+  }
+  return animTable[index][_n] * slider[_n/2]->getVal() / 16;
 }
 
 // Recompute animation table
 void ModeCycle::calcAnim() {
-  //  Re calc table.  If speed changed, then we need to set the animStep to the closest match
-  //  to the previous values to avoid "jarring" motor changes to user.
-
   // zereo the table
   for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
     animTable[i][0] = 0;
@@ -92,39 +95,30 @@ void ModeCycle::calcAnim() {
     int ix2 = (i+MODE_CYCLE_ANIM_STEPS*2/4)%MODE_CYCLE_ANIM_STEPS;
     int ix3 = (i+MODE_CYCLE_ANIM_STEPS*3/4)%MODE_CYCLE_ANIM_STEPS;
     
-    animTable[i][0] = (-cos( 2*PI * ((float)i/MODE_CYCLE_ANIM_STEPS*2) )+1) * slider[0]->getVal()/2;
+    float cs = sin( PI * ((float)i/MODE_CYCLE_ANIM_STEPS*2));
+    if ( cs < 0 ) cs = 0; // clamp negative
+    
+    animTable[i][0] = cs * 15; // * slider[0]->getVal()/2;
     animTable[ix1][1] = animTable[i][0];
     animTable[ix2][3] = animTable[i][0]; // Swapped 2&3 so cycle is like clock cycle (TL -> TR -> BR -> BL )
     animTable[ix3][2] = animTable[i][0];    
   }
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
-    Serial.print( animTable[i][0]); Serial.print( "  ");
-  }
-  Serial.println();
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
-    Serial.print( animTable[i][1]); Serial.print( "  ");
-  }
-  Serial.println();
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
-    Serial.print( animTable[i][2]); Serial.print( "  ");
-  }
-  Serial.println();
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
-    Serial.print( i ); Serial.print( ":");
-    Serial.print( animTable[i][3]); Serial.print( "  ");
-  }
-  Serial.println();
-
-  // Lower values
-
+//  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
+//    Serial.print( 0 ); Serial.print( ":");
+//    Serial.print( animTable[i][0]); Serial.print( "  ");
+//    Serial.print( 1 ); Serial.print( ":");
+//    Serial.print( animTable[i][1]); Serial.print( "  ");
+//    Serial.print( 2 ); Serial.print( ":");
+//    Serial.print( animTable[i][2]); Serial.print( "  ");
+//    Serial.print( 3 ); Serial.print( ":");
+//    Serial.print( animTable[i][3]); Serial.print( "  ");
+//    Serial.println();
+//  }
   
 }
 
-void ModeCycle::bumpAnimStep() {
-  animStep++;
+void ModeCycle::tick() {
+  animStep += (int)(1.5 * slider[2]->getVal());
   if ( animStep >= MODE_CYCLE_ANIM_STEPS ) {
     resetAnim();
   }
