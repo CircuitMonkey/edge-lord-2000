@@ -9,8 +9,6 @@
 #include "OledSlider.h"
 #include "OledGlyphs.h"
 
-#define MODE_CYCLE_ANIM_STEPS 128
-
 // Main Mode selection screen
 class ModeCycle : public Mode {
     public:
@@ -29,8 +27,9 @@ class ModeCycle : public Mode {
        String LBL_SPD = "SPD";
        String LBL_DIR = "DIR";
        String LBL_HRD = "HARD";
+       static const uint8_t ANIM_STEPS = 128;
        uint8_t animStep = 0;
-       uint8_t animTable[MODE_CYCLE_ANIM_STEPS][4]; // 128 states for 4 motors
+       uint8_t animTable[ANIM_STEPS][4]; // 128 states for 4 motors
        void resetAnim();
        void calcAnim();
 };

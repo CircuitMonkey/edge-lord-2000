@@ -1,14 +1,12 @@
 #include "Arduino.h"  
 #include "ModeCycle.h"
 
-//#define N_SLIDERS 4
-
 ModeCycle::ModeCycle(Adafruit_SSD1327& _display) : Mode( _display ) {
     uint8_t H = 100;
     uint8_t W = 127/N_SLIDERS;
     slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  2);  // Upper
     slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  2);  // Lower
-    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2, 16,  1);  // Speed
+    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2,16,  1);  // Speed
     slider[3]  = new OledSlider(display, "DIR", W*3,127-H, W,H,  0, 1,  0);  // DIR   
 
     calcAnim();
@@ -75,7 +73,7 @@ uint8_t ModeCycle::getMotorVal(uint8_t _n ) {
   if ( stopped ) return 0;
   int index = animStep;
   if (  slider[3]->getVal() > 0 ) {
-    index = MODE_CYCLE_ANIM_STEPS - animStep - 1;
+    index = ANIM_STEPS - animStep - 1;
   }
   return animTable[index][_n] * slider[_n/2]->getVal() / 16;
 }
@@ -83,19 +81,19 @@ uint8_t ModeCycle::getMotorVal(uint8_t _n ) {
 // Recompute animation table
 void ModeCycle::calcAnim() {
   // zereo the table
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
+  for ( int i=0; i< ANIM_STEPS; i++ ) {
     animTable[i][0] = 0;
     animTable[i][1] = 0;
     animTable[i][2] = 0;
     animTable[i][3] = 0;
   }
   // Wave table
-  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS/2; i++ ) {
-    int ix1 = (i+MODE_CYCLE_ANIM_STEPS*1/4)%MODE_CYCLE_ANIM_STEPS;
-    int ix2 = (i+MODE_CYCLE_ANIM_STEPS*2/4)%MODE_CYCLE_ANIM_STEPS;
-    int ix3 = (i+MODE_CYCLE_ANIM_STEPS*3/4)%MODE_CYCLE_ANIM_STEPS;
+  for ( int i=0; i< ANIM_STEPS/2; i++ ) {
+    int ix1 = (i+ANIM_STEPS*1/4)%ANIM_STEPS;
+    int ix2 = (i+ANIM_STEPS*2/4)%ANIM_STEPS;
+    int ix3 = (i+ANIM_STEPS*3/4)%ANIM_STEPS;
     
-    float cs = sin( PI * ((float)i/MODE_CYCLE_ANIM_STEPS*2));
+    float cs = sin( PI * ((float)i/ANIM_STEPS*2));
     if ( cs < 0 ) cs = 0; // clamp negative
     
     animTable[i][0] = cs * 15; // * slider[0]->getVal()/2;
@@ -103,7 +101,7 @@ void ModeCycle::calcAnim() {
     animTable[ix2][3] = animTable[i][0]; // Swapped 2&3 so cycle is like clock cycle (TL -> TR -> BR -> BL )
     animTable[ix3][2] = animTable[i][0];    
   }
-//  for ( int i=0; i< MODE_CYCLE_ANIM_STEPS; i++ ) {
+//  for ( int i=0; i< ANIM_STEPS; i++ ) {
 //    Serial.print( 0 ); Serial.print( ":");
 //    Serial.print( animTable[i][0]); Serial.print( "  ");
 //    Serial.print( 1 ); Serial.print( ":");
@@ -119,7 +117,7 @@ void ModeCycle::calcAnim() {
 
 void ModeCycle::tick() {
   animStep += (int)(1.5 * slider[2]->getVal());
-  if ( animStep >= MODE_CYCLE_ANIM_STEPS ) {
+  if ( animStep >= ANIM_STEPS ) {
     resetAnim();
   }
 }

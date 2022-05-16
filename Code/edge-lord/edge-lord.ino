@@ -6,6 +6,8 @@
 #include "ModeManual.h"
 #include "ModeCycle.h"
 #include "ModeLeftRight.h"
+#include "ModeUpDown.h"
+#include "ModeCross.h"
 #include "ModeBlank.h"
 
 #include "OledGlyphs.h"
@@ -50,6 +52,8 @@ ModeMenu menu(display);
 ModeManual modeManual(display);
 ModeCycle modeCycle(display);
 ModeLeftRight modeLeftRight(display);
+ModeUpDown modeUpDown(display);
+ModeCross modeCross(display);
 ModeBlank modeBlank(display);
 
 Mode *mode[12];
@@ -75,8 +79,8 @@ void setup() {
   mode[ 0] = &modeManual;  // mode[0] = new ModeManual(display);  ???
   mode[ 1] = &modeCycle;
   mode[ 2] = &modeLeftRight;
-//  mode[ 3] = &modeUpDown;
-//  mode[ 4] = modeCross;
+  mode[ 3] = &modeUpDown;
+  mode[ 4] = &modeCross;
 //  mode[ 5] = modeRandom;
 //  mode[ 6] = modePat1;
 //  mode[ 7] = modePat2;
@@ -84,8 +88,6 @@ void setup() {
 //  mode[ 9] = modePat4;
 //  mode[10] = modePat5;
 //  mode[11] = modePat6;
-  mode[ 3] = &modeBlank;
-  mode[ 4] = &modeBlank;
   mode[ 5] = &modeBlank;
   mode[ 6] = &modeBlank;
   mode[ 7] = &modeBlank;
@@ -132,11 +134,7 @@ void setup() {
 
 void loop() {
   
-  readButtons();
-  // DEBUG: Button state display
-  //display.fillRect(0, 8, 40, 8, 0);
-  //display.setCursor(0,8);
-  //display.println( buttonState, BIN );
+  readButtons(); // updates buttonState
 
   if ( state < 0 ) {
     // Handle Main Menu button presses
@@ -155,7 +153,6 @@ void loop() {
         // user exited state. back to menu.
         state = -1;
         setOutputs( 0,0,0,0 );  // turn off motors
-        //mode[state]->setShowing( 0 );  // stop showing mode
         display.clearDisplay();
         menu.setShowing(1); // enable main menu
         menu.draw();
@@ -171,8 +168,8 @@ void loop() {
     }
   }
 
-  display.display();
   strip.show();
+  display.display();
   delay(70);
 }
 
@@ -213,8 +210,8 @@ void setOutputs( uint8_t a, uint8_t b, uint8_t c, uint8_t d ) {
     setLED(0, 200, 50, 0 );
   }
   
-  setLED( 1, 1, a+1, b+1 );
-  setLED( 2, 1, c+1, d+1 );
+  setLED( 1, 5, a+5, c+5 );
+  setLED( 2, 5, b+5, d+5 );
 }
 
 void setLED( int n, uint8_t r, uint8_t g, uint8_t b ) {

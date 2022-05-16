@@ -1,7 +1,7 @@
 #include "Arduino.h"  
-#include "ModeLeftRight.h"
+#include "ModeCross.h"
 
-ModeLeftRight::ModeLeftRight(Adafruit_SSD1327& _display) : Mode( _display ) {
+ModeCross::ModeCross(Adafruit_SSD1327& _display) : Mode( _display ) {
     uint8_t H = 100;
     uint8_t W = 127/N_SLIDERS;
     slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  4);  // Upper
@@ -11,12 +11,12 @@ ModeLeftRight::ModeLeftRight(Adafruit_SSD1327& _display) : Mode( _display ) {
     calcAnim();
 }
 
-void ModeLeftRight::draw() {
+void ModeCross::draw() {
   display.drawBitmap(  2, 2, glyph, G_WH, G_WH, 15);
   display.setCursor( 36, 8 );
   display.setTextSize(1);
   display.setTextColor(SSD1327_WHITE);
-  display.println( "Left-Right" );
+  display.println( "Cross" );
   if ( showing < 1 ) return;
   
   for(int i=0; i<N_SLIDERS; i++) {
@@ -30,9 +30,9 @@ void ModeLeftRight::draw() {
 }
 
 // Process button press
-int8_t ModeLeftRight::buttonState(uint8_t _s) {
+int8_t ModeCross::buttonState(uint8_t _s) {
   // don't process presses if we are not showing.
-  //Serial.println("Manual Button State");
+  //Serial.println("Cross Button State");
   if ( showing < 1 ) return -1;
   if ( (_s&0x01) == 0 ) {
     slider[currentSlider]->change(1);
@@ -55,7 +55,7 @@ int8_t ModeLeftRight::buttonState(uint8_t _s) {
     return 0;
   }
   if ( (_s&(1<<4)) == 0 ) {  // Enter
-    //Serial.println( "Left-Right Enter" );
+    Serial.println( "UpDown Enter" );
     showing = 0;
     return -1;  // Cause main  menu to display.
   }
@@ -68,14 +68,21 @@ int8_t ModeLeftRight::buttonState(uint8_t _s) {
   return 0;  
 }
 
-uint8_t ModeLeftRight::getMotorVal(uint8_t _n ) {
+uint8_t ModeCross::getMotorVal(uint8_t _n ) {
   if ( stopped ) return 0;
+
+  uint8_t col = _n%2;
+  if ( _n > 1 ) { // lower, swap left right
+    col = 1-col;
+  }
+  return animTable[animStep][col] * slider[_n/2]->getVal() / 16;
   
-  return animTable[animStep][_n%2] * slider[_n/2]->getVal() / 16;  // two upper - two lower left-right?
+//  return animTable[animStep][_n%2] * slider[_n/2]->getVal() / 16;
+//  return animTable[animStep][_n/2] * slider[_n/2]->getVal() / 16;
 }
 
 // Recompute animation table
-void ModeLeftRight::calcAnim() {
+void ModeCross::calcAnim() {
   //  Re calc table.  If speed changed, then we need to set the animStep to the closest match
   //  to the previous values to avoid "jarring" motor changes to user.
 
@@ -88,10 +95,10 @@ void ModeLeftRight::calcAnim() {
   for ( int i=0; i< ANIM_STEPS; i++ ) {
     int ix1 = (i+ANIM_STEPS*1/2)%ANIM_STEPS;
     
-    float cs = sin( 2.0* PI * ((float)i/ANIM_STEPS/2));
+    float cs = sin( 2* PI * ((float)i/ANIM_STEPS/2));
     if ( cs < 0 ) cs = 0; // clamp negative
     
-    animTable[i][0] = cs * 15;
+    animTable[i][0] = cs * 15; // * slider[0]->getVal()/2;
     animTable[ix1][1] = animTable[i][0];
   }
   for ( int i=0; i< ANIM_STEPS; i++ ) {
@@ -104,13 +111,13 @@ void ModeLeftRight::calcAnim() {
   
 }
 
-void ModeLeftRight::tick() {
+void ModeCross::tick() {
   animStep += (int)(1.5 * slider[2]->getVal());
   if ( animStep >= ANIM_STEPS ) {
     resetAnim();
   }
 }
 
-void ModeLeftRight::resetAnim() {
+void ModeCross::resetAnim() {
   animStep = 0;
 }
