@@ -69,12 +69,3 @@ uint8_t ModeManual::getMotorVal(uint8_t _n ) {
 }
 
 void ModeManual::tick() {}
-
-//uint8_t ModeManual::isShowing() {
-//  if (showing > 0) return 1;
-//  return 0;
-//}
-
-//void ModeManual::setShowing(uint8_t _show) {
-//  showing = _show;
-//}
