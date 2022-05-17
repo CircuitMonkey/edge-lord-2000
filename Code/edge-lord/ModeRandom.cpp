@@ -6,8 +6,7 @@ ModeRandom::ModeRandom(Adafruit_SSD1327& _display) : Mode( _display ) {
     uint8_t W = 127/N_SLIDERS;
     slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  2);  // Upper
     slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  2);  // Lower
-    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2,16,  1);  // Speed
-    slider[3]  = new OledSlider(display, "DIR", W*3,127-H, W,H,  0, 1,  0);  // DIR   
+    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2,24,  5);  // Speed
 
     calcAnim();
     calcRand();
@@ -74,11 +73,6 @@ uint8_t ModeRandom::getMotorVal(uint8_t _n ) {
   if ( stopped ) return 0;
   if ( _n != activeChannel ) return 0;
   return animTable[animStep][0] * slider[_n/2]->getVal() / 16;
-//  int index = animStep;
-//  if (  slider[3]->getVal() > 0 ) {
-//    index = ANIM_STEPS - animStep - 1;
-//  }
-//  return animTable[index][randTable[_n]] * slider[randTable[_n/2]]->getVal() / 16;
 }
 
 // Recompute animation table

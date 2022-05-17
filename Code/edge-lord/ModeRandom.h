@@ -19,7 +19,7 @@ class ModeRandom : public Mode {
        uint8_t getMotorVal(uint8_t _n );
      private:
        int8_t currentSlider = 0;
-       static const uint8_t N_SLIDERS = 4;
+       static const uint8_t N_SLIDERS = 3;
        OledSlider *slider[N_SLIDERS];
        const unsigned char* glyph = glyph16m_cycle;
        String LBL_UP = "UP";

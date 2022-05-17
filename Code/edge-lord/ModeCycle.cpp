@@ -6,7 +6,7 @@ ModeCycle::ModeCycle(Adafruit_SSD1327& _display) : Mode( _display ) {
     uint8_t W = 127/N_SLIDERS;
     slider[0]  = new OledSlider(display, "U",   W*0,127-H, W,H,  0,15,  2);  // Upper
     slider[1]  = new OledSlider(display, "L",   W*1,127-H, W,H,  0,15,  2);  // Lower
-    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2,16,  1);  // Speed
+    slider[2]  = new OledSlider(display, "SPD", W*2,127-H, W,H,  2,16,  5);  // Speed
     slider[3]  = new OledSlider(display, "DIR", W*3,127-H, W,H,  0, 1,  0);  // DIR   
 
     calcAnim();
