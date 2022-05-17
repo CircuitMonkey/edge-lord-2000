@@ -112,6 +112,7 @@ void ModeCross::calcAnim() {
 }
 
 void ModeCross::tick() {
+  if ( stopped ) return;
   animStep += (int)(1.5 * slider[2]->getVal());
   if ( animStep >= ANIM_STEPS ) {
     resetAnim();
