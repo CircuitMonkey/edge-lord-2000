@@ -344,7 +344,7 @@ LETTER landscape</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="ADAFRUIT_HUZZAH32" urn="urn:adsk.eagle:package:33238116/5" type="model" library_version="6">
+<package3d name="ADAFRUIT_HUZZAH32" urn="urn:adsk.eagle:package:33238116/6" type="model" library_version="8">
 <description>AdaFruit Huzzah32 Board</description>
 <packageinstances>
 <packageinstance name="ADAFRUIT_HUZZAH32"/>
@@ -352,43 +352,77 @@ LETTER landscape</description>
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="ADAFRUIT-HUZZAH" urn="urn:adsk.eagle:symbol:33238114/1" library_version="5">
+<symbol name="ADAFRUIT-HUZZAH" urn="urn:adsk.eagle:symbol:33238114/3" library_version="8">
 <description>AdaFruit Huzzah32</description>
-<pin name="USB" x="-12.7" y="20.32" length="short"/>
-<pin name="EN" x="-12.7" y="15.24" length="short"/>
-<pin name="GND" x="0" y="-17.78" length="short" rot="R90"/>
-<pin name="3V" x="-12.7" y="27.94" length="short"/>
-<pin name="BAT" x="-12.7" y="22.86" length="short"/>
-<pin name="RST" x="-12.7" y="12.7" length="short"/>
-<pin name="SCL" x="-12.7" y="-2.54" length="short"/>
-<pin name="SDA" x="-12.7" y="0" length="short"/>
-<pin name="RX" x="-12.7" y="5.08" length="short"/>
-<pin name="TX" x="-12.7" y="7.62" length="short"/>
-<pin name="MI" x="-12.7" y="-7.62" length="short"/>
-<pin name="MO" x="-12.7" y="-10.16" length="short"/>
-<pin name="SCK" x="-12.7" y="-12.7" length="short"/>
-<pin name="12" x="12.7" y="-7.62" length="short" rot="R180"/>
-<pin name="13" x="12.7" y="-5.08" length="short" rot="R180"/>
-<pin name="14" x="12.7" y="-2.54" length="short" rot="R180"/>
-<pin name="15" x="12.7" y="0" length="short" rot="R180"/>
-<pin name="21" x="12.7" y="2.54" length="short" rot="R180"/>
-<pin name="27" x="12.7" y="5.08" length="short" rot="R180"/>
-<pin name="32" x="12.7" y="7.62" length="short" rot="R180"/>
-<pin name="33" x="12.7" y="10.16" length="short" rot="R180"/>
-<pin name="A0" x="12.7" y="15.24" length="short" rot="R180"/>
-<pin name="A1" x="12.7" y="17.78" length="short" rot="R180"/>
-<pin name="A2" x="12.7" y="20.32" length="short" rot="R180"/>
-<pin name="A3" x="12.7" y="22.86" length="short" rot="R180"/>
-<pin name="A4" x="12.7" y="25.4" length="short" rot="R180"/>
-<pin name="A5" x="12.7" y="27.94" length="short" rot="R180"/>
-<wire x1="-10.16" y1="30.48" x2="10.16" y2="30.48" width="0.6096" layer="94"/>
-<wire x1="10.16" y1="30.48" x2="10.16" y2="-15.24" width="0.6096" layer="94"/>
-<wire x1="10.16" y1="-15.24" x2="-10.16" y2="-15.24" width="0.6096" layer="94"/>
-<wire x1="-10.16" y1="-15.24" x2="-10.16" y2="30.48" width="0.6096" layer="94"/>
+<pin name="USB" x="-22.86" y="0" length="short"/>
+<pin name="EN" x="-22.86" y="-5.08" length="short"/>
+<pin name="GND" x="0" y="-38.1" length="short" rot="R90"/>
+<pin name="3V" x="-22.86" y="7.62" length="short"/>
+<pin name="BAT" x="-22.86" y="2.54" length="short"/>
+<pin name="!RST" x="-22.86" y="-7.62" length="short" function="dot"/>
+<pin name="SCL" x="-22.86" y="-22.86" length="short"/>
+<pin name="SDA" x="-22.86" y="-20.32" length="short"/>
+<pin name="RX" x="-22.86" y="-15.24" length="short"/>
+<pin name="TX" x="-22.86" y="-12.7" length="short"/>
+<pin name="MI" x="-22.86" y="-27.94" length="short"/>
+<pin name="MO" x="-22.86" y="-30.48" length="short"/>
+<pin name="SCK" x="-22.86" y="-33.02" length="short"/>
+<pin name="12" x="22.86" y="-27.94" length="short" rot="R180"/>
+<pin name="13" x="22.86" y="-25.4" length="short" rot="R180"/>
+<pin name="14" x="22.86" y="-22.86" length="short" rot="R180"/>
+<pin name="15" x="22.86" y="-20.32" length="short" rot="R180"/>
+<pin name="21" x="22.86" y="-17.78" length="short" rot="R180"/>
+<pin name="27" x="22.86" y="-15.24" length="short" rot="R180"/>
+<pin name="32" x="22.86" y="-12.7" length="short" rot="R180"/>
+<pin name="33" x="22.86" y="-10.16" length="short" rot="R180"/>
+<pin name="A0" x="22.86" y="-5.08" length="short" rot="R180"/>
+<pin name="A1" x="22.86" y="-2.54" length="short" rot="R180"/>
+<pin name="A2" x="22.86" y="0" length="short" rot="R180"/>
+<pin name="A3" x="22.86" y="2.54" length="short" rot="R180"/>
+<pin name="A4" x="22.86" y="5.08" length="short" rot="R180"/>
+<pin name="A5" x="22.86" y="7.62" length="short" rot="R180"/>
+<wire x1="-20.32" y1="12.7" x2="20.32" y2="12.7" width="0.6096" layer="94"/>
+<wire x1="20.32" y1="12.7" x2="20.32" y2="-35.56" width="0.6096" layer="94"/>
+<wire x1="20.32" y1="-35.56" x2="-20.32" y2="-35.56" width="0.6096" layer="94"/>
+<wire x1="-20.32" y1="-35.56" x2="-20.32" y2="12.7" width="0.6096" layer="94"/>
+<text x="0" y="13.716" size="1.778" layer="95" ratio="15" align="bottom-center">&gt;NAME</text>
+<text x="-10.16" y="-20.32" size="1.27" layer="97" align="center-left">23</text>
+<text x="-10.16" y="-22.86" size="1.27" layer="97" align="center-left">22</text>
+<text x="-10.16" y="-27.94" size="1.27" layer="97" align="center-left">19</text>
+<text x="-10.16" y="-30.48" size="1.27" layer="97" align="center-left">18</text>
+<text x="-10.16" y="-33.02" size="1.27" layer="97" align="center-left">5</text>
+<text x="-10.16" y="-15.24" size="1.27" layer="97" align="center-left">16</text>
+<text x="-10.16" y="-12.7" size="1.27" layer="97" align="center-left">17</text>
+<text x="-10.16" y="7.62" size="1.016" layer="97" ratio="15" align="center">REG@500mA</text>
+<text x="-12.7" y="2.54" size="1.016" layer="97" ratio="15" align="center-left">3.7V</text>
+<text x="-12.7" y="0" size="1.016" layer="97" ratio="15" align="center-left">~5V</text>
+<text x="-12.7" y="-5.08" size="1.016" layer="97" ratio="15" align="center-left">!SHTDOWN</text>
+<text x="-12.7" y="-12.7" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-15.24" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-20.32" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-22.86" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-27.94" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-30.48" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="-12.7" y="-33.02" size="1.016" layer="97" ratio="15" align="center">&lt;-&gt;</text>
+<text x="12.7" y="-27.94" size="1.016" layer="97" ratio="15" align="center-right">TCH5 A11 ADC#2 O-&gt;</text>
+<text x="12.7" y="-25.4" size="1.016" layer="97" ratio="15" align="center-right">TCH4 A12 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="-10.16" size="1.016" layer="97" ratio="15" align="center-right">TCH8  A9 ADC#1 &lt;-&gt;</text>
+<text x="12.7" y="-5.08" size="1.016" layer="97" ratio="15" align="center-right">26 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="-2.54" size="1.016" layer="97" ratio="15" align="center-right">25 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="0" size="1.016" layer="97" ratio="15" align="center-right">34 ADC#1 &lt;-I</text>
+<text x="12.7" y="2.54" size="1.016" layer="97" ratio="15" align="center-right">39 ADC#1 &lt;-I</text>
+<text x="12.7" y="5.08" size="1.016" layer="97" ratio="15" align="center-right">36 ADC#1 &lt;-I</text>
+<text x="12.7" y="7.62" size="1.016" layer="97" ratio="15" align="center-right">TCH0 4 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="-12.7" size="1.016" layer="97" ratio="15" align="center-right">TCH9  A7 ADC#1 &lt;-&gt;</text>
+<text x="12.7" y="-15.24" size="1.016" layer="97" ratio="15" align="center-right">TCH7 A10 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="-17.78" size="1.016" layer="97" ratio="15" align="center-right"> &lt;-&gt;</text>
+<text x="12.7" y="-20.32" size="1.016" layer="97" ratio="15" align="center-right">TCH3  A8 ADC#2 &lt;-&gt;</text>
+<text x="12.7" y="-22.86" size="1.016" layer="97" ratio="15" align="center-right">TCH8  A9 ADC#1 &lt;-&gt;</text>
+<text x="0" y="11.43" size="1.27" layer="96" ratio="15" align="top-center">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="HUZZAH" urn="urn:adsk.eagle:component:33238118/3" prefix="HUZ" uservalue="yes" library_version="6">
+<deviceset name="HUZZAH" urn="urn:adsk.eagle:component:33238118/5" prefix="HUZ" uservalue="yes" library_version="8">
 <description>AdaFruit Huzzah32</description>
 <gates>
 <gate name="G$1" symbol="ADAFRUIT-HUZZAH" x="0" y="-5.08"/>
@@ -396,6 +430,7 @@ LETTER landscape</description>
 <devices>
 <device name="HUZZAH" package="ADAFRUIT_HUZZAH32">
 <connects>
+<connect gate="G$1" pin="!RST" pad="RST"/>
 <connect gate="G$1" pin="12" pad="12"/>
 <connect gate="G$1" pin="13" pad="13"/>
 <connect gate="G$1" pin="14" pad="14"/>
@@ -416,7 +451,6 @@ LETTER landscape</description>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="MI" pad="MI"/>
 <connect gate="G$1" pin="MO" pad="MO"/>
-<connect gate="G$1" pin="RST" pad="RST"/>
 <connect gate="G$1" pin="RX" pad="RX"/>
 <connect gate="G$1" pin="SCK" pad="SCK"/>
 <connect gate="G$1" pin="SCL" pad="SCL"/>
@@ -425,7 +459,7 @@ LETTER landscape</description>
 <connect gate="G$1" pin="USB" pad="USB"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33238116/5"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33238116/6"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -905,7 +939,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <rectangle x1="0.7" y1="-1.24" x2="1.2" y2="-0.89" layer="51"/>
 <rectangle x1="-1.2" y1="-1.24" x2="-0.7" y2="-0.89" layer="51"/>
 </package>
-<package name="SOT-323" urn="urn:adsk.eagle:footprint:7191493/1" library_version="12">
+<package name="SOT-323" urn="urn:adsk.eagle:footprint:7191493/2" library_version="17" library_locally_modified="yes">
 <wire x1="-1.22" y1="-0.7" x2="-1.22" y2="0.7" width="0.2" layer="21"/>
 <wire x1="-1.22" y1="0.7" x2="-0.6" y2="0.7" width="0.2" layer="21"/>
 <wire x1="0.6" y1="0.7" x2="1.22" y2="0.7" width="0.2" layer="21"/>
@@ -918,7 +952,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <smd name="1" x="-0.65" y="-0.8" dx="0.9" dy="0.7" layer="1" roundness="40" rot="R90"/>
 <smd name="2" x="0.65" y="-0.8" dx="0.9" dy="0.7" layer="1" roundness="40" rot="R90"/>
 <smd name="3" x="0" y="0.8" dx="0.9" dy="0.7" layer="1" roundness="40" rot="R90"/>
-<text x="-1" y="-0.1" size="0.254" layer="27" font="vector">&gt;VALUE</text>
+<text x="0.016" y="-0.1" size="0.254" layer="27" font="vector" align="bottom-center">&gt;VALUE</text>
 <text x="-1.4" y="-0.7" size="0.8128" layer="25" font="vector" ratio="15" rot="R90">&gt;NAME</text>
 </package>
 <package name="D-PAK(TO-252)" urn="urn:adsk.eagle:footprint:7191492/1" library_version="12">
@@ -980,7 +1014,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <packageinstance name="SOT-23"/>
 </packageinstances>
 </package3d>
-<package3d name="SOT-323" urn="urn:adsk.eagle:package:7191506/1" type="box" library_version="12">
+<package3d name="SOT-323" urn="urn:adsk.eagle:package:7191506/3" type="model" library_version="17" library_locally_modified="yes">
 <packageinstances>
 <packageinstance name="SOT-323"/>
 </packageinstances>
@@ -993,7 +1027,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="FET_N" urn="urn:adsk.eagle:symbol:7191500/1" library_version="12">
+<symbol name="FET_N" urn="urn:adsk.eagle:symbol:7191500/1" locally_modified="yes" library_version="17" library_locally_modified="yes">
 <description>N-FET</description>
 <wire x1="0" y1="1.524" x2="-0.762" y2="1.524" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
@@ -1019,9 +1053,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <rectangle x1="-1.016" y1="1.016" x2="-0.762" y2="2.032" layer="94"/>
 <rectangle x1="-1.016" y1="-0.508" x2="-0.762" y2="0.508" layer="94"/>
 <rectangle x1="-1.016" y1="-2.032" x2="-0.762" y2="-1.016" layer="94"/>
-<pin name="D" x="0" y="2.54" visible="off" length="point" swaplevel="1" rot="R270"/>
-<pin name="S" x="0" y="-2.54" visible="off" length="point" swaplevel="1" rot="R90"/>
-<pin name="G" x="-2.54" y="0" visible="off" length="short" swaplevel="1"/>
+<pin name="D" x="0" y="2.54" visible="pad" length="point" swaplevel="1" rot="R270"/>
+<pin name="S" x="0" y="-2.54" visible="pad" length="point" swaplevel="1" rot="R90"/>
+<pin name="G" x="-2.54" y="0" visible="pad" length="point" swaplevel="1"/>
 <polygon width="0.127" layer="94">
 <vertex x="-0.762" y="0"/>
 <vertex x="-0.254" y="0.254"/>
@@ -1034,8 +1068,9 @@ In this library the device names are the same as the pin names of the symbols, t
 </polygon>
 <circle x="0" y="1.524" radius="0.2032" width="0.254" layer="94"/>
 <circle x="0" y="-1.524" radius="0.2032" width="0.3048" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
 </symbol>
-<symbol name="FET_P" urn="urn:adsk.eagle:symbol:7191498/2" library_version="12">
+<symbol name="FET_P" urn="urn:adsk.eagle:symbol:7191498/2" locally_modified="yes" library_version="17" library_locally_modified="yes">
 <description>FET P-Type,   PFET,  P-FET</description>
 <text x="0.508" y="-2.286" size="0.6096" layer="94" font="vector">D</text>
 <text x="0.508" y="1.778" size="0.6096" layer="94" font="vector">S</text>
@@ -1043,9 +1078,9 @@ In this library the device names are the same as the pin names of the symbols, t
 <text x="-0.127" y="-0.9144" size="0.6096" layer="94" font="vector" ratio="15">P</text>
 <text x="2.54" y="-1.016" size="0.8128" layer="96">&gt;VALUE</text>
 <text x="2.54" y="0" size="1.778" layer="95" ratio="15">&gt;NAME</text>
-<pin name="G" x="-2.54" y="0" visible="off" length="short"/>
-<pin name="S" x="0" y="2.54" visible="off" length="point" rot="R270"/>
-<pin name="D" x="0" y="-2.54" visible="off" length="point" rot="R90"/>
+<pin name="G" x="-2.54" y="0" visible="pad" length="point"/>
+<pin name="S" x="0" y="2.54" visible="pad" length="point" rot="R270"/>
+<pin name="D" x="0" y="-2.54" visible="pad" length="point" rot="R90"/>
 <wire x1="0" y1="1.524" x2="-0.762" y2="1.524" width="0.1524" layer="94"/>
 <wire x1="0" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
 <wire x1="0" y1="-1.524" x2="-0.762" y2="-1.524" width="0.1524" layer="94"/>
@@ -1076,10 +1111,11 @@ In this library the device names are the same as the pin names of the symbols, t
 </polygon>
 <circle x="0" y="1.524" radius="0.2032" width="0.254" layer="94"/>
 <circle x="0" y="-1.524" radius="0.2032" width="0.3048" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-0.762" y2="0" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="N-FET" urn="urn:adsk.eagle:component:7191515/5" locally_modified="yes" prefix="Q" uservalue="yes" library_version="13" library_locally_modified="yes">
+<deviceset name="N-FET" urn="urn:adsk.eagle:component:7191515/6" prefix="Q" uservalue="yes" library_version="17" library_locally_modified="yes">
 <description>FET</description>
 <gates>
 <gate name="G$1" symbol="FET_N" x="-2.54" y="0"/>
@@ -1159,7 +1195,7 @@ In this library the device names are the same as the pin names of the symbols, t
 </device>
 </devices>
 </deviceset>
-<deviceset name="P-FET" urn="urn:adsk.eagle:component:7191513/5" prefix="Q" uservalue="yes" library_version="12">
+<deviceset name="P-FET" urn="urn:adsk.eagle:component:7191513/9" prefix="Q" uservalue="yes" library_version="17" library_locally_modified="yes">
 <description>P-FET (PFET)</description>
 <gates>
 <gate name="G$1" symbol="FET_P" x="0" y="0"/>
@@ -1172,10 +1208,15 @@ In this library the device names are the same as the pin names of the symbols, t
 <connect gate="G$1" pin="S" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7191506/1"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7191506/3"/>
 </package3dinstances>
 <technologies>
 <technology name="">
+<attribute name="COST01" value="0.45" constant="no"/>
+<attribute name="COST10" value="0.35" constant="no"/>
+<attribute name="COST100" value="0.25" constant="no"/>
+<attribute name="MFR" value="ONsemi" constant="no"/>
+<attribute name="MPN" value="NTS4173" constant="no"/>
 <attribute name="VALUE" value="ON Semi NTS4173P" constant="no"/>
 </technology>
 </technologies>
@@ -1204,9 +1245,52 @@ In this library the device names are the same as the pin names of the symbols, t
 </package3dinstances>
 <technologies>
 <technology name="">
+<attribute name="COST01" value="0.45" constant="no"/>
+<attribute name="COST10" value="0.35" constant="no"/>
+<attribute name="COST100" value="0.25" constant="no"/>
 <attribute name="MPN" value="FDN340P" constant="no"/>
 <attribute name="SEEED" value="305030026" constant="no"/>
 <attribute name="VALUE" value="P-FET, 20V, 2A" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SOT-23-7A" package="SOT-23">
+<connects>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7191508/4"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="COST01" value="0.60" constant="no"/>
+<attribute name="COST10" value="0.50" constant="no"/>
+<attribute name="COST100" value="0.32" constant="no"/>
+<attribute name="MFR" value="Siliconix" constant="no"/>
+<attribute name="MPN" value="Si2369BDS" constant="no"/>
+<attribute name="VALUE" value="P-FET, 7.1A" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="SOT-23-5A" package="SOT-23">
+<connects>
+<connect gate="G$1" pin="D" pad="3"/>
+<connect gate="G$1" pin="G" pad="1"/>
+<connect gate="G$1" pin="S" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7191508/4"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="COST01" value="0.50" constant="no"/>
+<attribute name="COST10" value="0.35" constant="no"/>
+<attribute name="COST100" value="0.25" constant="no"/>
+<attribute name="MFR" value="Siliconix" constant="no"/>
+<attribute name="MPN" value="SI2347DS" constant="no"/>
+<attribute name="VALUE" value="P-FET, 5A" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -1286,7 +1370,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <rectangle x1="-1.016" y1="-0.635" x2="-0.6096" y2="0.6223" layer="51"/>
 <rectangle x1="0.6096" y1="-0.6223" x2="1.016" y2="0.6349" layer="51" rot="R180"/>
 </package>
-<package name="0603-RES" urn="urn:adsk.eagle:footprint:4193032/1" library_version="42">
+<package name="0603-RES" urn="urn:adsk.eagle:footprint:4193032/1" locally_modified="yes" library_version="43" library_locally_modified="yes">
 <description>0603 Resistor</description>
 <wire x1="-1.2746" y1="0.5484" x2="-0.4" y2="0.5484" width="0.1" layer="21"/>
 <wire x1="0.4" y1="0.5484" x2="1.2746" y2="0.5484" width="0.1" layer="21"/>
@@ -1300,7 +1384,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <wire x1="-0.762" y1="-0.381" x2="-0.762" y2="0.381" width="0" layer="51"/>
 <smd name="1" x="-0.751840625" y="0" dx="0.7112" dy="0.762" layer="1" roundness="20"/>
 <smd name="2" x="0.751840625" y="0" dx="0.7112" dy="0.762" layer="1" roundness="20"/>
-<text x="1.4" y="0" size="0.8128" layer="25" font="vector" ratio="15" align="center-left">&gt;NAME</text>
+<text x="1.524" y="0" size="0.8128" layer="25" font="vector" ratio="15" align="center-left">&gt;NAME</text>
 <text x="0" y="0" size="0.2" layer="27" align="center">&gt;VALUE</text>
 <rectangle x1="-0.762" y1="-0.381" x2="-0.508" y2="0.381" layer="51"/>
 <rectangle x1="0.508" y1="-0.381" x2="0.762" y2="0.381" layer="51"/>
@@ -2052,7 +2136,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <packageinstance name="0805-RES"/>
 </packageinstances>
 </package3d>
-<package3d name="0603-RES" urn="urn:adsk.eagle:package:4193040/2" type="model" library_version="42">
+<package3d name="0603-RES" urn="urn:adsk.eagle:package:4193040/2" type="model" library_version="43" library_locally_modified="yes">
 <description>0603 Resistor</description>
 <packageinstances>
 <packageinstance name="0603-RES"/>
@@ -2291,7 +2375,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RESISTOR" urn="urn:adsk.eagle:component:4192998/9" locally_modified="yes" prefix="R" uservalue="yes" library_version="42" library_locally_modified="yes">
+<deviceset name="RESISTOR" urn="urn:adsk.eagle:component:4192998/10" locally_modified="yes" prefix="R" uservalue="yes" library_version="43" library_locally_modified="yes">
 <description>Resistor</description>
 <gates>
 <gate name="G$1" symbol="RES-EU" x="0" y="0"/>
@@ -2351,7 +2435,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <attribute name="COST01" value="0.10" constant="no"/>
 <attribute name="COST10" value="0.05" constant="no"/>
 <attribute name="COST100" value="0.02" constant="no"/>
-<attribute name="VALUE" value="XXX" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2434,7 +2517,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CAPACITOR" urn="urn:adsk.eagle:component:4192997/11" prefix="C" uservalue="yes" library_version="42">
+<deviceset name="CAPACITOR" urn="urn:adsk.eagle:component:4192997/12" prefix="C" uservalue="yes" library_version="43" library_locally_modified="yes">
 <description>Capacitor</description>
 <gates>
 <gate name="G$1" symbol="CAP-NP" x="0" y="0"/>
@@ -2461,7 +2544,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:4193041/2"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.12" constant="no"/>
+<attribute name="COST10" value="0.09" constant="no"/>
+<attribute name="COST100" value="0.05" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="0603-OLD" package="0603">
@@ -2525,7 +2612,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:4193046/4"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.12" constant="no"/>
+<attribute name="COST10" value="0.09" constant="no"/>
+<attribute name="COST100" value="0.04" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="0603" package="0603-CAP">
@@ -2537,12 +2628,17 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:4193021/2"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.12" constant="no"/>
+<attribute name="COST10" value="0.09" constant="no"/>
+<attribute name="COST100" value="0.05" constant="no"/>
+<attribute name="VALUE" value="??uF" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CAPACITOR_POL" urn="urn:adsk.eagle:component:4192986/8" prefix="C" uservalue="yes" library_version="42" library_locally_modified="yes">
+<deviceset name="CAPACITOR_POL" urn="urn:adsk.eagle:component:4192986/9" prefix="C" uservalue="yes" library_version="43" library_locally_modified="yes">
 <description>Polarized Capacitor</description>
 <gates>
 <gate name="G$1" symbol="CAP-POL" x="0" y="0"/>
@@ -2571,7 +2667,12 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:4192951/2"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="1.15" constant="no"/>
+<attribute name="COST10" value="0.90" constant="no"/>
+<attribute name="COST100" value="0.50" constant="no"/>
+<attribute name="VALUE" value="???uF/??V" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="-ALUM-THD-8" package="CAP_ALUM_THD_8">
@@ -2951,7 +3052,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="SMART_LED" urn="urn:adsk.eagle:component:7708225/6" prefix="RGB" uservalue="yes" library_version="14">
+<deviceset name="SMART_LED" urn="urn:adsk.eagle:component:7708225/7" prefix="RGB" uservalue="yes" library_version="15">
 <description>Smart LED  SK6812  WS2812</description>
 <gates>
 <gate name="G$1" symbol="LED_SMART" x="0" y="0"/>
@@ -2968,7 +3069,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:5499938/3"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.40" constant="no"/>
+<attribute name="COST10" value="0.30" constant="no"/>
+<attribute name="COST100" value="0.10" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="3535" package="SMD_3535">
@@ -2982,7 +3087,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:5499936/3"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.60" constant="no"/>
+<attribute name="COST10" value="0.50" constant="no"/>
+<attribute name="COST100" value="0.40" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="4020-SIDE" package="SMD_4020">
@@ -2996,7 +3105,11 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:7708224/3"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="COST01" value="0.60" constant="no"/>
+<attribute name="COST10" value="0.50" constant="no"/>
+<attribute name="COST100" value="0.40" constant="no"/>
+</technology>
 </technologies>
 </device>
 <device name="2020" package="SMD_2020">
@@ -3296,7 +3409,32 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="-4.3" y="2.8" size="1.27" layer="25" ratio="15">&gt;NAME</text>
 <text x="-4.4" y="-3.6" size="0.8128" layer="27">&gt;VALUE</text>
 </package>
-<package name="BOURNS-MF-MSMF" urn="urn:adsk.eagle:footprint:9102314/1" library_version="3" library_locally_modified="yes">
+<package name="BELFUSE-1206" urn="urn:adsk.eagle:footprint:9102313/1" library_version="3" library_locally_modified="yes">
+<description>Polyfuse fuse 1206</description>
+<wire x1="-1.7" y1="0.9" x2="1.7" y2="0.9" width="0" layer="51"/>
+<wire x1="1.7" y1="0.9" x2="1.7" y2="0.3" width="0" layer="51"/>
+<wire x1="1.7" y1="0.3" x2="1.4" y2="0" width="0" layer="51" curve="90"/>
+<wire x1="1.4" y1="0" x2="1.7" y2="-0.3" width="0" layer="51" curve="90"/>
+<wire x1="1.7" y1="-0.3" x2="1.7" y2="-0.9" width="0" layer="51"/>
+<wire x1="1.7" y1="-0.9" x2="-1.7" y2="-0.9" width="0" layer="51"/>
+<wire x1="-1.7" y1="-0.9" x2="-1.7" y2="-0.3" width="0" layer="51"/>
+<wire x1="-1.7" y1="-0.3" x2="-1.4" y2="0" width="0" layer="51" curve="90"/>
+<wire x1="-1.4" y1="0" x2="-1.7" y2="0.3" width="0" layer="51" curve="90"/>
+<wire x1="-1.7" y1="0.3" x2="-1.7" y2="0.9" width="0" layer="51"/>
+<wire x1="-0.9" y1="0.95" x2="0.9" y2="0.95" width="0.127" layer="21"/>
+<wire x1="-0.9" y1="-0.95" x2="0.9" y2="-0.95" width="0.127" layer="21"/>
+<polygon width="0" layer="51">
+<vertex x="-1.1" y="0.9"/>
+<vertex x="-1.1" y="-0.9"/>
+<vertex x="1.1" y="-0.9"/>
+<vertex x="1.1" y="0.9"/>
+</polygon>
+<smd name="2" x="1.5" y="0" dx="1.9" dy="1" layer="1" roundness="50" rot="R90"/>
+<smd name="1" x="-1.5" y="0" dx="1.9" dy="1" layer="1" roundness="50" rot="R90"/>
+<text x="0" y="0" size="0.4064" layer="27" font="vector" align="center">&gt;VALUE</text>
+<text x="0" y="1.5" size="0.8128" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
+</package>
+<package name="BOURNS-MF-MSMF" urn="urn:adsk.eagle:footprint:9102314/1" locally_modified="yes" library_version="3" library_locally_modified="yes">
 <description>BOURNS Resetable Fuse MF-MSMF</description>
 <wire x1="-1.2" y1="1.7" x2="1.2" y2="1.7" width="0.127" layer="51"/>
 <wire x1="1.2" y1="1.7" x2="1.2" y2="-1.7" width="0.127" layer="51"/>
@@ -3327,32 +3465,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <smd name="1" x="-1.9" y="0" dx="3.5" dy="1.8" layer="1" roundness="30" rot="R90"/>
 <smd name="2" x="1.9" y="0" dx="3.5" dy="1.8" layer="1" roundness="30" rot="R90"/>
 <text x="-0.1" y="2.8" size="1.016" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
-<text x="0.1" y="-2.4" size="0.4064" layer="27" font="vector" align="center">&gt;VALUE</text>
-</package>
-<package name="BELFUSE-1206" urn="urn:adsk.eagle:footprint:9102313/1" library_version="3" library_locally_modified="yes">
-<description>Polyfuse fuse 1206</description>
-<wire x1="-1.7" y1="0.9" x2="1.7" y2="0.9" width="0" layer="51"/>
-<wire x1="1.7" y1="0.9" x2="1.7" y2="0.3" width="0" layer="51"/>
-<wire x1="1.7" y1="0.3" x2="1.4" y2="0" width="0" layer="51" curve="90"/>
-<wire x1="1.4" y1="0" x2="1.7" y2="-0.3" width="0" layer="51" curve="90"/>
-<wire x1="1.7" y1="-0.3" x2="1.7" y2="-0.9" width="0" layer="51"/>
-<wire x1="1.7" y1="-0.9" x2="-1.7" y2="-0.9" width="0" layer="51"/>
-<wire x1="-1.7" y1="-0.9" x2="-1.7" y2="-0.3" width="0" layer="51"/>
-<wire x1="-1.7" y1="-0.3" x2="-1.4" y2="0" width="0" layer="51" curve="90"/>
-<wire x1="-1.4" y1="0" x2="-1.7" y2="0.3" width="0" layer="51" curve="90"/>
-<wire x1="-1.7" y1="0.3" x2="-1.7" y2="0.9" width="0" layer="51"/>
-<wire x1="-0.9" y1="0.95" x2="0.9" y2="0.95" width="0.127" layer="21"/>
-<wire x1="-0.9" y1="-0.95" x2="0.9" y2="-0.95" width="0.127" layer="21"/>
-<polygon width="0" layer="51">
-<vertex x="-1.1" y="0.9"/>
-<vertex x="-1.1" y="-0.9"/>
-<vertex x="1.1" y="-0.9"/>
-<vertex x="1.1" y="0.9"/>
-</polygon>
-<smd name="2" x="1.5" y="0" dx="1.9" dy="1" layer="1" roundness="50" rot="R90"/>
-<smd name="1" x="-1.5" y="0" dx="1.9" dy="1" layer="1" roundness="50" rot="R90"/>
-<text x="0" y="0" size="0.4064" layer="27" font="vector" align="center">&gt;VALUE</text>
-<text x="0" y="1.5" size="0.8128" layer="25" font="vector" ratio="15" align="center">&gt;NAME</text>
+<text x="0.1" y="-0.876" size="0.762" layer="27" font="vector" align="center">&gt;VALUE</text>
 </package>
 </packages>
 <packages3d>
@@ -3361,21 +3474,21 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <packageinstance name="OMNI-BLOK-REPLACEABLE"/>
 </packageinstances>
 </package3d>
-<package3d name="BOURNS-MF-MSMF" urn="urn:adsk.eagle:package:9102321/2" type="model" library_version="3" library_locally_modified="yes">
-<description>BOURNS Resetable Fuse MF-MSMF</description>
-<packageinstances>
-<packageinstance name="BOURNS-MF-MSMF"/>
-</packageinstances>
-</package3d>
 <package3d name="BELFUSE-1206" urn="urn:adsk.eagle:package:9102320/1" type="box" library_version="3" library_locally_modified="yes">
 <description>Polyfuse fuse 1206</description>
 <packageinstances>
 <packageinstance name="BELFUSE-1206"/>
 </packageinstances>
 </package3d>
+<package3d name="BOURNS-MF-MSMF" urn="urn:adsk.eagle:package:9102321/2" type="model" library_version="3" library_locally_modified="yes">
+<description>BOURNS Resetable Fuse MF-MSMF</description>
+<packageinstances>
+<packageinstance name="BOURNS-MF-MSMF"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
-<symbol name="FUSE" urn="urn:adsk.eagle:symbol:9102319/1" library_version="3" library_locally_modified="yes">
+<symbol name="FUSE" urn="urn:adsk.eagle:symbol:9102319/1" locally_modified="yes" library_version="3" library_locally_modified="yes">
 <description>Fuse</description>
 <wire x1="0" y1="0" x2="1.778" y2="0" width="0.254" layer="94" curve="180"/>
 <wire x1="0" y1="0" x2="-1.778" y2="0" width="0.254" layer="94" curve="180"/>
@@ -3385,8 +3498,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <circle x="1.778" y="0" radius="0.254" width="0.254" layer="94"/>
 <text x="0" y="1.27" size="1.27" layer="95" font="vector" ratio="15" align="bottom-center">&gt;NAME</text>
 <text x="0" y="-1.524" size="0.8128" layer="96" font="vector" align="center">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="pad" length="point"/>
-<pin name="2" x="2.54" y="0" visible="pad" length="point" rot="R180"/>
+<pin name="1" x="-2.54" y="0" visible="off" length="point"/>
+<pin name="2" x="2.54" y="0" visible="off" length="point" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3697,40 +3810,40 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <packageinstance name="SMD-040X080"/>
 </packageinstances>
 </package3d>
-<package3d name="SMD-TRIANGLE-36DEG-10MM" urn="urn:adsk.eagle:package:7289199/2" type="box" library_version="21">
+<package3d name="SMD-070MIL" urn="urn:adsk.eagle:package:16261575/3" type="empty" library_version="21">
+<description>70 mil square pad.  Offset by 20 mil for PCB edge milling</description>
+<packageinstances>
+<packageinstance name="SMD-070MIL"/>
+</packageinstances>
+</package3d>
+<package3d name="SMD-TRIANGLE-36DEG-10MM" urn="urn:adsk.eagle:package:7289199/3" type="empty" library_version="22">
 <description>Touch Pad  36 Degrees point  10mm long (for Pentagram)</description>
 <packageinstances>
 <packageinstance name="SMD-TRIANGLE-36DEG-10MM"/>
 </packageinstances>
 </package3d>
-<package3d name="SMD-PENTACORNER" urn="urn:adsk.eagle:package:7289198/2" type="box" library_version="21">
+<package3d name="SMD-PENTACORNER" urn="urn:adsk.eagle:package:7289198/3" type="empty" library_version="22">
 <description>Touch pad for pentagon inner angle</description>
 <packageinstances>
 <packageinstance name="SMD-PENTACORNER"/>
 </packageinstances>
 </package3d>
-<package3d name="SMD-TRIANGLE-45DEG-05MM" urn="urn:adsk.eagle:package:7291766/2" type="box" library_version="21">
+<package3d name="SMD-TRIANGLE-45DEG-05MM" urn="urn:adsk.eagle:package:7291766/3" type="empty" library_version="22">
 <description>Trianglular Corner Test point or SMD pad.</description>
 <packageinstances>
 <packageinstance name="SMD-TRIANGLE-45DEG-05MM"/>
 </packageinstances>
 </package3d>
-<package3d name="SMD-100X100" urn="urn:adsk.eagle:package:12570102/3" type="box" library_version="21">
+<package3d name="SMD-100X100" urn="urn:adsk.eagle:package:12570102/4" type="empty" library_version="22">
 <description>100 x 100 mil pad</description>
 <packageinstances>
 <packageinstance name="SMD-100X100"/>
 </packageinstances>
 </package3d>
-<package3d name="SMD-200X200" urn="urn:adsk.eagle:package:12570106/2" type="box" library_version="21">
+<package3d name="SMD-200X200" urn="urn:adsk.eagle:package:12570106/3" type="empty" library_version="22">
 <description>200 x 200 mil pad</description>
 <packageinstances>
 <packageinstance name="SMD-200X200"/>
-</packageinstances>
-</package3d>
-<package3d name="SMD-070MIL" urn="urn:adsk.eagle:package:16261575/3" type="empty" library_version="21">
-<description>70 mil square pad.  Offset by 20 mil for PCB edge milling</description>
-<packageinstances>
-<packageinstance name="SMD-070MIL"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -3750,7 +3863,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PAD" urn="urn:adsk.eagle:component:7289205/9" prefix="PAD" library_version="21">
+<deviceset name="PAD" urn="urn:adsk.eagle:component:7289205/10" prefix="PAD" library_version="22">
 <description>Solder Pad</description>
 <gates>
 <gate name="G$1" symbol="PAD" x="-2.54" y="0"/>
@@ -3772,7 +3885,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="PAD" pad="TP"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7289199/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7289199/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3783,7 +3896,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="PAD" pad="1"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7289198/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7289198/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3794,7 +3907,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="PAD" pad="1"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:7291766/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:7291766/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3805,7 +3918,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="PAD" pad="PAD"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:12570102/3"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:12570102/4"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3816,7 +3929,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="G$1" pin="PAD" pad="PAD"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:12570106/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:12570106/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -3850,7 +3963,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="FRAME1" library="frames-custom" library_urn="urn:adsk.eagle:library:11820551" deviceset="LETTER_L" device="">
 <attribute name="DOCUMENT_NUMBER" value="VIBE CONTROLLER"/>
 </part>
-<part name="HUZZAH" library="co-espressif" library_urn="urn:adsk.eagle:library:10161512" deviceset="HUZZAH" device="HUZZAH" package3d_urn="urn:adsk.eagle:package:33238116/5"/>
+<part name="HUZZAH" library="co-espressif" library_urn="urn:adsk.eagle:library:10161512" deviceset="HUZZAH" device="HUZZAH" package3d_urn="urn:adsk.eagle:package:33238116/6" value="Huzzah32"/>
 <part name="SUPPLY1" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 <part name="Q1" library="transistor-fet" library_urn="urn:adsk.eagle:library:7191487" deviceset="N-FET" device="_SI2302" package3d_urn="urn:adsk.eagle:package:7191508/4" value="SI2302CDS"/>
@@ -3865,14 +3978,14 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="SUPPLY9" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 <part name="RGB1" library="led" library_urn="urn:adsk.eagle:library:5499911" deviceset="SMART_LED" device="3535" package3d_urn="urn:adsk.eagle:package:5499936/3"/>
 <part name="SUPPLY10" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
-<part name="Q5" library="transistor-fet" library_urn="urn:adsk.eagle:library:7191487" deviceset="P-FET" device="SOT-323" package3d_urn="urn:adsk.eagle:package:7191506/1" value="ON Semi NTS4173P"/>
+<part name="Q5" library="transistor-fet" library_urn="urn:adsk.eagle:library:7191487" deviceset="P-FET" device="SOT-323" package3d_urn="urn:adsk.eagle:package:7191506/3" value="ON Semi NTS4173P"/>
 <part name="R3" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193040/2" value="20K"/>
 <part name="SUPPLY20" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="+4.1V" device=""/>
 <part name="SUPPLY21" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="VLED" device=""/>
 <part name="SUPPLY22" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="VLED" device=""/>
 <part name="SUPPLY79" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="3.3V" device=""/>
 <part name="R4" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193040/2" value="330"/>
-<part name="C11" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="1uF"/>
+<part name="C11" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
 <part name="SUPPLY81" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="VLED" device=""/>
 <part name="SUPPLY82" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 <part name="MOTORS" library="con-headers" library_urn="urn:adsk.eagle:library:5539071" deviceset="CON_08X1" device="-RA-THD" package3d_urn="urn:adsk.eagle:package:35303551/2"/>
@@ -3920,39 +4033,34 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <part name="SUPPLY30" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 <part name="R7" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="RESISTOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193040/2" value="100K"/>
 <part name="SUPPLY31" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
-<part name="C6" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="0.1uF"/>
-<part name="C7" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="0.1uF"/>
-<part name="C8" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="0.1uF"/>
-<part name="C9" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="0.1uF"/>
+<part name="C6" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
+<part name="C7" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
+<part name="C8" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
+<part name="C9" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
 <part name="PWR" library="switch-smd" library_urn="urn:adsk.eagle:library:5542824" deviceset="SLIDE-SPDT" device="JS102011JCQN" package3d_urn="urn:adsk.eagle:package:14113628/3"/>
-<part name="C12" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="1uF"/>
+<part name="C12" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
 <part name="SUPPLY32" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="VLED" device=""/>
 <part name="SUPPLY33" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
-<part name="C13" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="1uF"/>
+<part name="C13" library="rlc" library_urn="urn:adsk.eagle:library:4192893" deviceset="CAPACITOR" device="0603" package3d_urn="urn:adsk.eagle:package:4193021/2" value="??uF"/>
 <part name="SUPPLY34" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="VLED" device=""/>
 <part name="SUPPLY35" library="supply" library_urn="urn:adsk.eagle:library:10485988" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="82.804" y="101.854" size="1.016" layer="97">OUTPUT ONLY</text>
-<text x="94.996" y="136.652" size="1.27" layer="97">GPIO #4</text>
-<text x="93.726" y="123.698" size="1.27" layer="97">GPIO #26</text>
-<text x="93.726" y="126.238" size="1.27" layer="97">GPIO #25</text>
+<text x="92.964" y="101.854" size="1.016" layer="97">OUTPUT ONLY</text>
 <text x="7.62" y="53.34" size="2.54" layer="97">TODO:
 - change button pins to use input only pins.
 -change MOT3 MOT4 to use non-SCK/MO pins.
 - MOTORS connector channel order should
   be reversed, should go left to right.</text>
-<text x="94.996" y="134.112" size="1.27" layer="97">GPIO #15</text>
-<text x="45.466" y="105.918" size="1.27" layer="97" align="bottom-right">GPIO #22</text>
-<text x="45.466" y="108.458" size="1.27" layer="97" align="bottom-right">GPIO #21</text>
-<text x="27.94" y="123.952" size="1.27" layer="97" align="top-left">Ground EN
+<text x="30.48" y="123.952" size="1.27" layer="97" align="top-left">Ground EN
 to turn off.</text>
 <text x="5.08" y="17.78" size="2.54" layer="97">Bodge Notes:
  - MOT2 and  MOT3 don't work as they were routed
     onto INPUT only pins.  Cut traces and moved to
-    SCK(5) and MO (18) pins.  But SCK has signal on it during programming. Causing motor to run.
+    MO(18) and MI (19) pins.  
+- But SCK has signal on it during programming. Not for outputs. (or maybe pixel)
  - Rev.B Move buttons to input only pins and use output pins (non-SCK) for motors.</text>
 </plain>
 <instances>
@@ -3965,19 +4073,22 @@ to turn off.</text>
 <attribute name="DRAWING_NAME" x="91.44" y="1.27" size="2.54" layer="94" font="vector" ratio="15"/>
 <attribute name="DOCUMENT_NUMBER" x="160.02" y="6.096" size="3.81" layer="94" ratio="15"/>
 </instance>
-<instance part="HUZZAH" gate="G$1" x="68.58" y="109.22" smashed="yes"/>
-<instance part="SUPPLY1" gate="GND" x="25.4" y="121.92" smashed="yes">
-<attribute name="VALUE" x="26.924" y="120.269" size="0.6096" layer="96" font="vector" align="center"/>
+<instance part="HUZZAH" gate="G$1" x="68.58" y="129.54" smashed="yes">
+<attribute name="NAME" x="68.58" y="143.256" size="1.778" layer="95" ratio="15" align="bottom-center"/>
+<attribute name="VALUE" x="68.58" y="140.97" size="1.27" layer="96" ratio="15" align="top-center"/>
 </instance>
-<instance part="SUPPLY2" gate="GND" x="68.58" y="91.44" smashed="yes">
-<attribute name="VALUE" x="68.58" y="88.773" size="0.6096" layer="96" font="vector" align="center"/>
+<instance part="SUPPLY1" gate="GND" x="27.94" y="121.92" smashed="yes">
+<attribute name="VALUE" x="29.464" y="120.269" size="0.6096" layer="96" font="vector" align="center"/>
+</instance>
+<instance part="SUPPLY2" gate="GND" x="68.58" y="88.9" smashed="yes">
+<attribute name="VALUE" x="68.58" y="86.233" size="0.6096" layer="96" font="vector" align="center"/>
 </instance>
 <instance part="Q1" gate="G$1" x="195.58" y="167.64" smashed="yes">
 <attribute name="VALUE" x="198.12" y="166.624" size="0.6096" layer="96"/>
 <attribute name="NAME" x="198.12" y="167.64" size="1.778" layer="95" ratio="15"/>
 </instance>
-<instance part="SUPPLY3" gate="P" x="43.18" y="142.24" smashed="yes">
-<attribute name="VALUE" x="41.275" y="145.415" size="1.778" layer="96"/>
+<instance part="SUPPLY3" gate="P" x="30.48" y="142.24" smashed="yes">
+<attribute name="VALUE" x="28.575" y="145.415" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY4" gate="P" x="220.98" y="180.34" smashed="yes">
 <attribute name="VALUE" x="219.075" y="183.515" size="1.778" layer="96"/>
@@ -3987,7 +4098,6 @@ to turn off.</text>
 </instance>
 <instance part="R1" gate="G$1" x="190.5" y="162.56" smashed="yes" rot="R90">
 <attribute name="NAME" x="189.2808" y="163.83" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="190.5" y="163.83" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY6" gate="GND" x="190.5" y="160.02" smashed="yes">
 <attribute name="VALUE" x="190.5" y="157.353" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4001,7 +4111,6 @@ to turn off.</text>
 </instance>
 <instance part="R2" gate="G$1" x="190.5" y="144.78" smashed="yes" rot="R90">
 <attribute name="NAME" x="189.2808" y="146.05" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="190.5" y="146.05" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY9" gate="GND" x="190.5" y="142.24" smashed="yes">
 <attribute name="VALUE" x="190.5" y="139.573" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4019,7 +4128,6 @@ to turn off.</text>
 </instance>
 <instance part="R3" gate="G$1" x="172.72" y="53.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="171.5008" y="54.61" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="172.72" y="54.61" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY20" gate="P" x="172.72" y="60.96" smashed="yes">
 <attribute name="VALUE" x="170.815" y="64.135" size="1.778" layer="96"/>
@@ -4030,12 +4138,11 @@ to turn off.</text>
 <instance part="SUPPLY22" gate="G$1" x="203.2" y="58.42" smashed="yes">
 <attribute name="VALUE" x="203.2" y="60.96" size="0.6096" layer="96" align="center"/>
 </instance>
-<instance part="SUPPLY79" gate="G$1" x="53.34" y="137.16" smashed="yes">
-<attribute name="VALUE" x="53.34" y="139.7" size="0.6096" layer="96" align="center"/>
+<instance part="SUPPLY79" gate="G$1" x="40.64" y="137.16" smashed="yes">
+<attribute name="VALUE" x="40.64" y="139.7" size="0.6096" layer="96" align="center"/>
 </instance>
-<instance part="R4" gate="G$1" x="96.52" y="101.6" smashed="yes">
-<attribute name="NAME" x="97.79" y="102.8192" size="1.27" layer="95" font="vector" ratio="15" align="bottom-center"/>
-<attribute name="VALUE" x="97.79" y="101.6" size="0.9652" layer="96" font="vector" align="center"/>
+<instance part="R4" gate="G$1" x="106.68" y="101.6" smashed="yes">
+<attribute name="NAME" x="107.95" y="102.8192" size="1.27" layer="95" font="vector" ratio="15" align="bottom-center"/>
 </instance>
 <instance part="C11" gate="G$1" x="203.2" y="38.1" smashed="yes">
 <attribute name="NAME" x="205.74" y="38.1" size="1.6764" layer="95" font="vector" ratio="15"/>
@@ -4064,7 +4171,6 @@ to turn off.</text>
 </instance>
 <instance part="R5" gate="G$1" x="190.5" y="127" smashed="yes" rot="R90">
 <attribute name="NAME" x="189.2808" y="128.27" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="190.5" y="128.27" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY78" gate="GND" x="190.5" y="124.46" smashed="yes">
 <attribute name="VALUE" x="190.5" y="121.793" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4078,7 +4184,6 @@ to turn off.</text>
 </instance>
 <instance part="R6" gate="G$1" x="190.5" y="109.22" smashed="yes" rot="R90">
 <attribute name="NAME" x="189.2808" y="110.49" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="190.5" y="110.49" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY93" gate="GND" x="190.5" y="106.68" smashed="yes">
 <attribute name="VALUE" x="190.5" y="104.013" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4198,7 +4303,6 @@ to turn off.</text>
 </instance>
 <instance part="R7" gate="G$1" x="167.64" y="43.18" smashed="yes" rot="R90">
 <attribute name="NAME" x="166.4208" y="44.45" size="1.27" layer="95" font="vector" ratio="15" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="167.64" y="44.45" size="0.9652" layer="96" font="vector" rot="R90" align="center"/>
 </instance>
 <instance part="SUPPLY31" gate="GND" x="167.64" y="40.64" smashed="yes">
 <attribute name="VALUE" x="167.64" y="37.973" size="0.6096" layer="96" font="vector" align="center"/>
@@ -4219,9 +4323,9 @@ to turn off.</text>
 <attribute name="NAME" x="208.28" y="114.3" size="1.6764" layer="95" font="vector" ratio="15"/>
 <attribute name="VALUE" x="208.28" y="113.284" size="0.6096" layer="96" font="vector"/>
 </instance>
-<instance part="PWR" gate="G$1" x="17.78" y="124.46" smashed="yes" rot="MR270">
-<attribute name="NAME" x="18.542" y="129.032" size="1.27" layer="95" font="vector" ratio="15" rot="MR270" align="center-right"/>
-<attribute name="VALUE" x="16.002" y="125.222" size="0.4064" layer="96" font="vector" ratio="15" rot="MR270" align="center"/>
+<instance part="PWR" gate="G$1" x="20.32" y="124.46" smashed="yes" rot="MR270">
+<attribute name="NAME" x="21.082" y="129.032" size="1.27" layer="95" font="vector" ratio="15" rot="MR270" align="center-right"/>
+<attribute name="VALUE" x="18.542" y="125.222" size="0.4064" layer="96" font="vector" ratio="15" rot="MR270" align="center"/>
 </instance>
 <instance part="C12" gate="G$1" x="213.36" y="38.1" smashed="yes">
 <attribute name="NAME" x="215.9" y="38.1" size="1.6764" layer="95" font="vector" ratio="15"/>
@@ -4250,15 +4354,16 @@ to turn off.</text>
 <net name="EN" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="EN"/>
-<wire x1="55.88" y1="124.46" x2="20.32" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="124.46" x2="22.86" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="PWR" gate="G$1" pin="2"/>
-<label x="23.876" y="124.714" size="1.27" layer="95"/>
+<label x="26.416" y="124.714" size="1.27" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="GND"/>
 <pinref part="SUPPLY2" gate="GND" pin="GND"/>
+<wire x1="68.58" y1="88.9" x2="68.58" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -4376,7 +4481,7 @@ to turn off.</text>
 <segment>
 <pinref part="PWR" gate="G$1" pin="3"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
-<wire x1="20.32" y1="121.92" x2="25.4" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="121.92" x2="27.94" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+4.1V" class="0">
@@ -4387,9 +4492,9 @@ to turn off.</text>
 </segment>
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="BAT"/>
-<wire x1="55.88" y1="132.08" x2="43.18" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="132.08" x2="30.48" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="P" pin="+4.1V"/>
-<wire x1="43.18" y1="132.08" x2="43.18" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="132.08" x2="30.48" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
@@ -4427,8 +4532,8 @@ to turn off.</text>
 <net name="LED_EN" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="A5"/>
-<wire x1="81.28" y1="137.16" x2="86.36" y2="137.16" width="0.1524" layer="91"/>
-<label x="86.36" y="137.16" size="1.27" layer="95" xref="yes"/>
+<wire x1="91.44" y1="137.16" x2="96.52" y2="137.16" width="0.1524" layer="91"/>
+<label x="96.52" y="137.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q6" gate="G$1" pin="G"/>
@@ -4474,7 +4579,7 @@ to turn off.</text>
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="3V"/>
 <pinref part="SUPPLY79" gate="G$1" pin="+3.3V"/>
-<wire x1="55.88" y1="137.16" x2="53.34" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="137.16" x2="40.64" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="OLED" gate="G$1" pin="VCC"/>
@@ -4485,8 +4590,8 @@ to turn off.</text>
 <net name="MOT1" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="A1"/>
-<wire x1="81.28" y1="127" x2="86.36" y2="127" width="0.1524" layer="91"/>
-<label x="86.36" y="127" size="1.27" layer="95" xref="yes"/>
+<wire x1="91.44" y1="127" x2="96.52" y2="127" width="0.1524" layer="91"/>
+<label x="96.52" y="127" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q2" gate="G$1" pin="G"/>
@@ -4500,8 +4605,8 @@ to turn off.</text>
 <net name="MOT0" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="A0"/>
-<wire x1="81.28" y1="124.46" x2="86.36" y2="124.46" width="0.1524" layer="91"/>
-<label x="86.36" y="124.46" size="1.27" layer="95" xref="yes"/>
+<wire x1="91.44" y1="124.46" x2="96.52" y2="124.46" width="0.1524" layer="91"/>
+<label x="96.52" y="124.46" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="G$1" pin="G"/>
@@ -4514,8 +4619,8 @@ to turn off.</text>
 </net>
 <net name="ENTER" class="0">
 <segment>
-<label x="83.82" y="116.84" size="1.27" layer="95" xref="yes"/>
-<wire x1="83.82" y1="116.84" x2="81.28" y2="116.84" width="0.1524" layer="91"/>
+<label x="93.98" y="116.84" size="1.27" layer="95" xref="yes"/>
+<wire x1="93.98" y1="116.84" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="32"/>
 </segment>
 <segment>
@@ -4526,8 +4631,8 @@ to turn off.</text>
 </net>
 <net name="LEFT" class="0">
 <segment>
-<label x="83.82" y="114.3" size="1.27" layer="95" xref="yes"/>
-<wire x1="83.82" y1="114.3" x2="81.28" y2="114.3" width="0.1524" layer="91"/>
+<label x="93.98" y="114.3" size="1.27" layer="95" xref="yes"/>
+<wire x1="93.98" y1="114.3" x2="91.44" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="27"/>
 </segment>
 <segment>
@@ -4539,8 +4644,8 @@ to turn off.</text>
 <net name="RIGHT" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="21"/>
-<wire x1="81.28" y1="111.76" x2="83.82" y2="111.76" width="0.1524" layer="91"/>
-<label x="83.82" y="111.76" size="1.27" layer="95" xref="yes"/>
+<wire x1="91.44" y1="111.76" x2="93.98" y2="111.76" width="0.1524" layer="91"/>
+<label x="93.98" y="111.76" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="RIGHT" gate="G$1" pin="1"/>
@@ -4550,8 +4655,8 @@ to turn off.</text>
 </net>
 <net name="UP" class="0">
 <segment>
-<label x="83.82" y="109.22" size="1.27" layer="95" xref="yes"/>
-<wire x1="83.82" y1="109.22" x2="81.28" y2="109.22" width="0.1524" layer="91"/>
+<label x="93.98" y="109.22" size="1.27" layer="95" xref="yes"/>
+<wire x1="93.98" y1="109.22" x2="91.44" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="15"/>
 </segment>
 <segment>
@@ -4564,14 +4669,14 @@ to turn off.</text>
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="12"/>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="81.28" y1="101.6" x2="93.98" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="101.6" x2="104.14" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PIXELS1" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="101.6" x2="104.14" y2="101.6" width="0.1524" layer="91"/>
-<label x="104.14" y="101.6" size="1.27" layer="95" xref="yes"/>
+<wire x1="111.76" y1="101.6" x2="114.3" y2="101.6" width="0.1524" layer="91"/>
+<label x="114.3" y="101.6" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
 <pinref part="RGB1" gate="G$1" pin="IN"/>
@@ -4666,9 +4771,9 @@ to turn off.</text>
 <label x="187.96" y="132.08" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="129.54" x2="86.36" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="129.54" x2="96.52" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="A2"/>
-<label x="86.36" y="129.54" size="1.27" layer="95" xref="yes"/>
+<label x="96.52" y="129.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="MOT3" class="0">
@@ -4681,16 +4786,16 @@ to turn off.</text>
 <label x="187.96" y="114.3" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="81.28" y1="132.08" x2="86.36" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="132.08" x2="96.52" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="A3"/>
-<label x="86.36" y="132.08" size="1.27" layer="95" xref="yes"/>
+<label x="96.52" y="132.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="SDA"/>
-<wire x1="55.88" y1="109.22" x2="53.34" y2="109.22" width="0.1524" layer="91"/>
-<label x="53.34" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="109.22" x2="40.64" y2="109.22" width="0.1524" layer="91"/>
+<label x="40.64" y="109.22" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="OLED" gate="G$1" pin="SDA"/>
@@ -4701,8 +4806,8 @@ to turn off.</text>
 <net name="SCL" class="0">
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="SCL"/>
-<wire x1="55.88" y1="106.68" x2="53.34" y2="106.68" width="0.1524" layer="91"/>
-<label x="53.34" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="45.72" y1="106.68" x2="40.64" y2="106.68" width="0.1524" layer="91"/>
+<label x="40.64" y="106.68" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="OLED" gate="G$1" pin="SCL"/>
@@ -4726,8 +4831,8 @@ to turn off.</text>
 </net>
 <net name="DOWN" class="0">
 <segment>
-<label x="83.82" y="106.68" size="1.27" layer="95" xref="yes"/>
-<wire x1="83.82" y1="106.68" x2="81.28" y2="106.68" width="0.1524" layer="91"/>
+<label x="93.98" y="106.68" size="1.27" layer="95" xref="yes"/>
+<wire x1="93.98" y1="106.68" x2="91.44" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="HUZZAH" gate="G$1" pin="14"/>
 </segment>
 <segment>
@@ -4743,9 +4848,9 @@ to turn off.</text>
 <label x="88.9" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<label x="83.82" y="104.14" size="1.27" layer="95" xref="yes"/>
+<label x="93.98" y="104.14" size="1.27" layer="95" xref="yes"/>
 <pinref part="HUZZAH" gate="G$1" pin="13"/>
-<wire x1="81.28" y1="104.14" x2="83.82" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="104.14" x2="93.98" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="!PFET_EN" class="0">
@@ -4779,8 +4884,8 @@ to turn off.</text>
 </segment>
 <segment>
 <pinref part="HUZZAH" gate="G$1" pin="A4"/>
-<wire x1="81.28" y1="134.62" x2="86.36" y2="134.62" width="0.1524" layer="91"/>
-<label x="86.36" y="134.62" size="1.27" layer="95" xref="yes"/>
+<wire x1="91.44" y1="134.62" x2="96.52" y2="134.62" width="0.1524" layer="91"/>
+<label x="96.52" y="134.62" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
