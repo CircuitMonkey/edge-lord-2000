@@ -8,6 +8,7 @@
 #include "ModeLeftRight.h"
 #include "ModeUpDown.h"
 #include "ModeCross.h"
+#include "ModeRandom.h"
 #include "ModeBlank.h"
 
 #include "OledGlyphs.h"
@@ -54,6 +55,7 @@ ModeCycle modeCycle(display);
 ModeLeftRight modeLeftRight(display);
 ModeUpDown modeUpDown(display);
 ModeCross modeCross(display);
+ModeRandom modeRandom(display);
 ModeBlank modeBlank(display);
 
 Mode *mode[12];
@@ -81,14 +83,13 @@ void setup() {
   mode[ 2] = &modeLeftRight;
   mode[ 3] = &modeUpDown;
   mode[ 4] = &modeCross;
-//  mode[ 5] = modeRandom;
-//  mode[ 6] = modePat1;
-//  mode[ 7] = modePat2;
-//  mode[ 8] = modePat3;
-//  mode[ 9] = modePat4;
-//  mode[10] = modePat5;
-//  mode[11] = modePat6;
-  mode[ 5] = &modeBlank;
+  mode[ 5] = &modeRandom;
+//  mode[ 6] = &modePat1;
+//  mode[ 7] = &modePat2;
+//  mode[ 8] = &modePat3;
+//  mode[ 9] = &modePat4;
+//  mode[10] = &modePat5;
+//  mode[11] = &modePat6;
   mode[ 6] = &modeBlank;
   mode[ 7] = &modeBlank;
   mode[ 8] = &modeBlank;
