@@ -9,6 +9,7 @@
 #include "ModeUpDown.h"
 #include "ModeCross.h"
 #include "ModeRandom.h"
+#include "ModeHammer.h"
 #include "ModeBlank.h"
 
 #include "OledGlyphs.h"
@@ -36,12 +37,13 @@
 #define MOT_1  19
 
 #define MOT_MIN 6
-#define MOT_MAX 48
+#define MOT_MAX 64
 // Slider range 0-15  versus motor range 0-255
 // motor = slider * MOT_GAIN
 #define MOT_GAIN  MOT_MAX/16
 
 uint8_t buttonState = 0xFF;
+uint8_t buttonDebounce = 0;
 
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -56,6 +58,7 @@ ModeLeftRight modeLeftRight(display);
 ModeUpDown modeUpDown(display);
 ModeCross modeCross(display);
 ModeRandom modeRandom(display);
+ModeHammer modeHammer(display);
 ModeBlank modeBlank(display);
 
 Mode *mode[12];
@@ -87,13 +90,12 @@ void setup() {
 //  mode[ 6] = &modePat1;
 //  mode[ 7] = &modePat2;
 //  mode[ 8] = &modePat3;
-//  mode[ 9] = &modePat4;
 //  mode[10] = &modePat5;
 //  mode[11] = &modePat6;
   mode[ 6] = &modeBlank;
   mode[ 7] = &modeBlank;
   mode[ 8] = &modeBlank;
-  mode[ 9] = &modeBlank;
+  mode[ 9] = &modeHammer;
   mode[10] = &modeBlank;
   mode[11] = &modeBlank;
 
@@ -171,7 +173,7 @@ void loop() {
 
   strip.show();
   display.display();
-  delay(70);
+  delay(20);
 }
 
 void showStartScreen() {
@@ -185,12 +187,18 @@ void showStartScreen() {
 }
 
 void readButtons() {
-  buttonState = digitalRead(  BTN_U )&0x1 | 
+  if ( buttonDebounce > 0 ) {
+    buttonState = 0xFF;
+    buttonDebounce--;
+  } else {
+    buttonDebounce =  1;  // Cause readButtons to skip next read if there was a button press handled.
+    buttonState = digitalRead(  BTN_U )&0x1 | 
                 (digitalRead( BTN_D )&0x1) << 1 | 
                 (digitalRead( BTN_L )&0x1) << 2 |
                 (digitalRead( BTN_R )&0x1) << 3 |
                 (digitalRead( BTN_ENT )&0x1) << 4 |
                 (digitalRead( BTN_STP )&0x1) << 5;
+  }
 }
 
 void setOutputs( uint8_t a, uint8_t b, uint8_t c, uint8_t d ) {

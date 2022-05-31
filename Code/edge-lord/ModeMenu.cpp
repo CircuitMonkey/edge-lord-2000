@@ -33,7 +33,7 @@ ModeMenu::ModeMenu(Adafruit_SSD1327& _display) : display(_display) {
     glyph[7] = glyph16m_pattern_02;
 
     glyph[8] = glyph16m_pattern_03;
-    glyph[9] = glyph16m_blank;
+    glyph[9] = glyph16m_hammer;
     glyph[10] = glyph16m_blank;
     glyph[11] = glyph16m_blank;
 }
@@ -59,7 +59,7 @@ void ModeMenu::draw() {
 }
 
 void ModeMenu::setSelection(uint8_t _v) {
-
+   // NOT USED.   DELETE ME.
 }
 
 uint8_t ModeMenu::getSelection() {
