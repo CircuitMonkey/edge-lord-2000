@@ -44,12 +44,12 @@ int8_t ModeManual::buttonState(uint8_t _s) {
   }
   if ( (_s&(1<<2)) == 0 ) {  // Left
     currentSlider--;
-    if ( currentSlider<0 ) currentSlider = 3;
+    if ( currentSlider<0 ) currentSlider = N_SLIDERS-1;
     return 0;
   }
   if ( (_s&(1<<3)) == 0 ) {  // Right
     currentSlider++;
-    if ( currentSlider>3 ) currentSlider = 0;
+    if ( currentSlider>=N_SLIDERS ) currentSlider = 0;
     return 0;
   }
   if ( (_s&(1<<4)) == 0 ) {  // Enter
